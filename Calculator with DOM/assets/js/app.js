@@ -30,7 +30,7 @@ multOperation = function(){
     number1 = document.getElementById("num1");
     number2 = document.getElementById("num2");
 
-    multiply = parseInt(number1.value) * parseInt(number2.value);
+    multiply = parseInt(number1.value) * parseInt(number2.value) * parseInt(number1.value);
 
     result =document.getElementById("result");
     result.innerText = multiply;
@@ -41,6 +41,7 @@ multButton.addEventListener("click", multOperation);
 
 divButton = document.getElementById("divButton");
 divOperation = function(){
+
     number1 = document.getElementById("num1");
     number2 = document.getElementById("num2");
 
