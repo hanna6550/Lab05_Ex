@@ -3,23 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculatortttttt</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Calculator</title>
 </head>
 <body>
     
     <div class="center">
 
-        <h2>Calculator</h2>
+        <h1>Calculator</h1>
 
-        <p><input type="text" id="num1"></p>
-        <p><input type="text" id="num2"></p>
+        <p><input type="text" class="input " id="num1" placeholder="number"></p>
+        <p><input type="text" class="input " id="num2" placeholder="number"></p>
 
-        <button id="plusButton">+</button>
-        <button id="minusButton">-</button>
-        <button id="mulButton">*</button>
-        <button id="divButton">/</button>
+        <div >
 
-        <h2 id="result"></h2>
+            <div class="row">
+                <button id="plusButton">Add</button>
+                <button id="minusButton">Subtruct</button>
+                <button id="mulButton">Multiply</button>
+                <button id="divButton">Divide</button>
+            </div>
+
+            <div class="row">
+                <button id="avButton">Average</button>
+                <button id="maxButton">Pow</button>
+                <button id="sqrtButton">Sqrt</button>
+            </div>
+
+        </div>
+
+        
+        
+
+        <h2 id="result" ></h2>
     </div>
 
 
@@ -28,20 +44,3 @@
     <script src="assets/js/app.js"></script>
 </body>
 </html>
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator With DOM</title>
-</head>
-<body>
-    
-    <button class= "btn btn-blue" id="btnADD"> Addition </button>
-
-
-
-
-    <script src="assets/js/app.js"></script>
-</body>
-</html> -->

@@ -11,6 +11,7 @@ plusOperation = function(){
 plusButton.addEventListener("click", plusOperation);
 
 
+
 minusButton = document.getElementById("minusButton");
 minusOperation = function(){
     number1 = document.getElementById("num1");
@@ -30,7 +31,7 @@ multOperation = function(){
     number1 = document.getElementById("num1");
     number2 = document.getElementById("num2");
 
-    multiply = parseInt(number1.value) * parseInt(number2.value) * parseInt(number1.value);
+    multiply = parseInt(number1.value) * parseInt(number2.value);
 
     result =document.getElementById("result");
     result.innerText = multiply;
@@ -41,39 +42,57 @@ multButton.addEventListener("click", multOperation);
 
 divButton = document.getElementById("divButton");
 divOperation = function(){
-
     number1 = document.getElementById("num1");
     number2 = document.getElementById("num2");
 
-    divide = parseFloat(number1.value) / parseFloat(number2.value);
+    if(number2 == 0){
+        result =document.getElementById("result");
+        result.innerText = "invalid input";
+        return result;
+    }else{
+        divide = parseFloat(number1.value) / parseFloat(number2.value);
 
-    result =document.getElementById("result");
-    result.innerText = divide;
+        result =document.getElementById("result");
+        result.innerText = divide;
+    }
 }
 divButton.addEventListener("click", divOperation);
 
 
 
-//  var btnadd = document.getElementById('btnADD').addEventListener
-//  ('click', add); 
+aveButton = document.getElementById("avButton");
+aveOperation = function(){
+    number1 = document.getElementById("num1");
+    number2 = document.getElementById("num2");
 
-//  let length = prompt("how many number that you want to add : ");
-//     array = new Array();
-//     for(let i=0; i<length; i++){
-//         array[i] = parseInt(prompt("Enter Number("+(i+1)+"): "));
-//         } 
-//     console.log(add(array));
+    average = (parseInt(number1.value) + parseInt(number2.value)) / 2;
 
-//  function add(arr){
+    result =document.getElementById("result");
+    result.innerText = average;
+}
+aveButton.addEventListener("click", aveOperation);
 
-//     sum = 0;
-//      for(let i=0;i< arr.length;i++){
-//          sum += arr[i];
-//      }
-//      return "the sum of the nums =  : " + sum;
 
-     
-   
-//  }
+powButton = document.getElementById("maxButton");
+powOperation = function(){
+    number1 = document.getElementById("num1");
+    number2 = document.getElementById("num2");
 
- 
+    power = parseInt(number1.value) ** parseInt(number2.value);
+
+    result =document.getElementById("result");
+    result.innerText = power;
+}
+powButton.addEventListener("click", powOperation);
+
+
+sqrtButton = document.getElementById("sqrtButton");
+sqrtOperation = function(){
+    number1 = document.getElementById("num1");
+    number1 = document.getElementById("num2");
+    sqrt = Math.sqrt(parseInt(number1.value));
+
+    result =document.getElementById("result");
+    result.innerText = sqrt;
+}
+sqrtButton.addEventListener("click", sqrtOperation);
