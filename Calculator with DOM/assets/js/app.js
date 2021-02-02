@@ -1,98 +1,152 @@
-plusButton = document.getElementById("plusButton");
-plusOperation = function(){
-    number1 = document.getElementById("num1");
-    number2 = document.getElementById("num2");
+var num1 = document.getElementById('one');
+var num2 = document.getElementById('two');
+var num3 = document.getElementById('three');
+var num4 = document.getElementById('four');
+var num5 = document.getElementById('five');
+var num6 = document.getElementById('six');
+var num7 = document.getElementById('seven');
+var num8 = document.getElementById('eight');;
+var num9 = document.getElementById('nine');
+var num0 = document.getElementById('zero');
 
-    sum = parseInt(number1.value) + parseInt(number2.value);
 
-    result =document.getElementById("result");
-    result.innerText = sum;
+let addition = document.getElementById("add-btn");
+let subtract = document.getElementById("sub-btn");
+let multiply = document.getElementById("mult-btn");
+let divide = document.getElementById("div-btn");
+let average = document.getElementById("ave-btn")
+let power = document.getElementById("pow-btn")
+let squarroot = document.getElementById("sq-btn")
+
+let display = document.getElementById("display-answer");
+let clear = document.getElementById('clear-everything');
+let equalBtn = document.getElementById('equal-btn');
+
+let nums = [];
+let result;
+
+// diplay the number
+num1.addEventListener('click', function() {
+    display.textContent = "1";
+    nums.push(1);
+})
+num2.addEventListener('click', function() {
+    display.textContent = "2";
+    nums.push(2);
+});
+num3.addEventListener('click', function() {
+    display.textContent = "3";
+    nums.push(3);
+});
+num4.addEventListener('click', function() {
+    display.textContent = "4";
+    nums.push(4);
+});
+num5.addEventListener('click', function() {
+    display.textContent = "5";
+    nums.push(5);
+});
+num6.addEventListener('click', function() {
+    display.textContent = "6";
+    nums.push(6);
+});
+num7.addEventListener('click', function() {
+    display.textContent = "7";
+    nums.push(7);
+});
+num8.addEventListener('click', function() {
+    display.textContent = "8";
+    nums.push(8);
+});
+num9.addEventListener('click', function() {
+    display.textContent = "9";
+    nums.push(9);
+});
+num0.addEventListener('click', function() {
+    display.textContent = "0";
+    nums.push(0);
+});
+
+// clear the display. Set to default 0
+clear.addEventListener('click', function() {
+    display.textContent = '0';
+    result = '';
+    nums = [];
+})
+// display result
+equalBtn.addEventListener('click', function() {
+    if (display.textContent == '0') {
+        return;
+    }
+    display.textContent = result;
+    result = '';
+    nums = [];
+})
+
+// call appropriate function for operation button clicked and store result
+average.addEventListener('click', function() {
+    result = ave(nums[0], nums[1]);
+});
+power.addEventListener('click', function() {
+    result = pow(nums[0], nums[1]);
+});
+squarroot.addEventListener('click', function() {
+    result = sq(nums[0]);
+});
+
+addition.addEventListener('click', function() {
+    result = add(nums);
+});
+subtract.addEventListener('click', function() {
+    result = sub(nums[0], nums[1]);
+});
+multiply.addEventListener('click', function() {
+    result = mult(nums);
+})
+divide.addEventListener('click', function() {
+    result = div(nums[0], nums[1]);
+})
+
+function ave(num1, num2) {
+    result = (num1 + num2) / 2;
+    return result;
 }
-plusButton.addEventListener("click", plusOperation);
-
-
-
-minusButton = document.getElementById("minusButton");
-minusOperation = function(){
-    number1 = document.getElementById("num1");
-    number2 = document.getElementById("num2");
-
-    difference = parseInt(number1.value) - parseInt(number2.value);
-
-    result =document.getElementById("result");
-    result.innerText = difference;
+function sq(num1) {
+    result = Math.sqrt(num1);
+    return result;
 }
-minusButton.addEventListener("click", minusOperation);
-
-
-
-multButton = document.getElementById("mulButton");
-multOperation = function(){
-    number1 = document.getElementById("num1");
-    number2 = document.getElementById("num2");
-
-    multiply = parseInt(number1.value) * parseInt(number2.value);
-
-    result =document.getElementById("result");
-    result.innerText = multiply;
+function pow(num1, num2) {
+    result = num1 ** num2
+    return result;
 }
-multButton.addEventListener("click", multOperation);
 
+function add(num) {
+    result = 0;
+    num.forEach(function(number) {
+        result += number;
+    });
+    return result;
+}
 
+function sub(num1, num2) {
+    result = num1 - num2;
+    return result;
+}
 
-divButton = document.getElementById("divButton");
-divOperation = function(){
-    number1 = document.getElementById("num1");
-    number2 = document.getElementById("num2");
+function mult(num) {
+    result = 1;
+    num.forEach(function(number) {
+        result *= number;
+    });
+    return result;
+}
 
-    if(number2 == 0){
-        result =document.getElementById("result");
-        result.innerText = "invalid input";
+function div(num1, num2) {
+    if (num2 == 0) {
+        return "Error: Division with Zero";
+    } else {
+        result = num1 / num2;
         return result;
-    }else{
-        divide = parseFloat(number1.value) / parseFloat(number2.value);
-
-        result =document.getElementById("result");
-        result.innerText = divide;
     }
 }
-divButton.addEventListener("click", divOperation);
-
-
-
-aveButton = document.getElementById("avButton");
-aveOperation = function(){
-    number1 = document.getElementById("num1");
-    number2 = document.getElementById("num2");
-
-    average = (parseInt(number1.value) + parseInt(number2.value)) / 2;
-
-    result =document.getElementById("result");
-    result.innerText = average;
-}
-aveButton.addEventListener("click", aveOperation);
-
-
-powButton = document.getElementById("maxButton");
-powOperation = function(){
-    number1 = document.getElementById("num1");
-    number2 = document.getElementById("num2");
-
-    power = parseInt(number1.value) ** parseInt(number2.value);
-
-    result =document.getElementById("result");
-    result.innerText = power;
-}
-powButton.addEventListener("click", powOperation);
-
-
-sqrtButton = document.getElementById("sqrtButton");
-sqrtOperation = function(){
-    number1 = document.getElementById("num1");
-    number1 = document.getElementById("num2");
-    sqrt = Math.sqrt(parseInt(number1.value));
-
-    result =document.getElementById("result");
-    result.innerText = sqrt;
-}
-sqrtButton.addEventListener("click", sqrtOperation);
+s

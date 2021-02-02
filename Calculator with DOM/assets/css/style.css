@@ -1,12 +1,14 @@
 body{
-    margin-left: 15rem;
-    margin-top: 3rem;
-    font-size: 1.5rem;
+    
+    margin-left: 10rem;
 }
-.input{
-    background-color: lavender;
+h1{
+    font-size: 2em;
+}
+.numbers *:not(:last-child) {
+    margin-right: .5em;
+}
+.btn{
 
-}
-.row{
-    margin-top: 1rem;
+    background-color: gray;
 }
